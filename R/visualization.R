@@ -1258,12 +1258,12 @@ plot_tree_with_post = function(tree_file,
     mutate(variable_i = 1:(nrow(tree_plot$terminal_seg_df)))
 
   post_plot = post_df |>
-    ggplot(aes(variable_i, mean)) +
+    ggplot(aes(x, mean)) +
     geom_hline(yintercept = 0,
                lty = 2,
                color = 'grey40') +
     geom_boxplot(stat = 'identity',
-                 aes(group  = variable_i,
+                 aes(group  = x,
                      ymin   = `5%`,
                      ymax   = `95%`,
                      middle = mean,
